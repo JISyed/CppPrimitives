@@ -1,4 +1,4 @@
 CppPrimitives
 =============
 
-C++ Primitive Data Types as Objects (int, float, bool, etc)
+My silly little attempt at trying to making C++ primitive types act like objects, like they do in C#.
