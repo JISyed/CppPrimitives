@@ -66,11 +66,14 @@
   <ItemGroup>
     <ClCompile Include="Int.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SimpleUnitTester\PrivUnitTests.cpp" />
     <ClCompile Include="SimpleUnitTester\SimpleUnitTester.cpp" />
+    <ClCompile Include="SimpleUnitTester\UnitTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Int.h" />
     <ClInclude Include="SimpleUnitTester\SimpleUnitTester.h" />
+    <ClInclude Include="SimpleUnitTester\UnitTest.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

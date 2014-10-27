@@ -1,11 +1,15 @@
 #include <conio.h>
 #include <iostream>
 
+#include "SimpleUnitTester\SimpleUnitTester.h"
+
 #include "Int.h"
 using namespace PrimitivesAsObjects;
 
 int main()
 {
+	SimpleUnitTester unitTesting;
+	/*
 	int i = 1;
 	unsigned int ui = 100;
 	char c = 32;
@@ -30,6 +34,10 @@ int main()
 	intObj3 = intObj2;
 
 	int iConvert = intObj2;
+	//*/
+
+	const int failures = unitTesting.PerformAllTests();
+	std::cout << "Number or Failures: " << failures << std::endl;
 
 	// Wait for user input
 	std::cout << "Press Enter...\n";

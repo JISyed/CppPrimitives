@@ -27,12 +27,21 @@
     <ClCompile Include="SimpleUnitTester\SimpleUnitTester.cpp">
       <Filter>SimpleUnitTester</Filter>
     </ClCompile>
+    <ClCompile Include="SimpleUnitTester\PrivUnitTests.cpp">
+      <Filter>SimpleUnitTester</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleUnitTester\UnitTest.cpp">
+      <Filter>SimpleUnitTester</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Int.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SimpleUnitTester\SimpleUnitTester.h">
+      <Filter>SimpleUnitTester</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleUnitTester\UnitTest.h">
       <Filter>SimpleUnitTester</Filter>
     </ClInclude>
   </ItemGroup>
