@@ -90,6 +90,342 @@ void SimpleUnitTester::createAllTests(UnitTestList& allUnitTests)
 		}
 	));
 
+	allUnitTests.push_back(UnitTest(
+		"Int", "Int += Int",
+		[]()
+		{
+			// -------------------------
+			int expected = 12;
+			Int i(3);
+			Int j(9);
+			i += j;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "Int += int",
+		[]()
+		{
+			// -------------------------
+			int expected = 12;
+			Int i(3);
+			int j(9);
+			i += j;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "Int -= Int",
+		[]()
+		{
+			// -------------------------
+			int expected = 6;
+			Int i(9);
+			Int j(3);
+			i -= j;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "Int -= int",
+		[]()
+		{
+			// -------------------------
+			int expected = 6;
+			Int i(9);
+			int j(3);
+			i -= j;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "Int *= Int",
+		[]()
+		{
+			// -------------------------
+			int expected = 27;
+			Int i(9);
+			Int j(3);
+			i *= j;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "Int *= int",
+		[]()
+		{
+			// -------------------------
+			int expected = 27;
+			Int i(9);
+			int j(3);
+			i *= j;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "Int /= Int",
+		[]()
+		{
+			// -------------------------
+			int expected = 4;
+			Int i(12);
+			Int j(3);
+			i /= j;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "Int /= int",
+		[]()
+		{
+			// -------------------------
+			int expected = 4;
+			Int i(12);
+			int j(3);
+			i /= j;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "Int %= Int",
+		[]()
+		{
+			// -------------------------
+			int expected = 1;
+			Int i(7);
+			Int j(6);
+			i %= j;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "Int %= int",
+		[]()
+		{
+			// -------------------------
+			int expected = 1;
+			Int i(7);
+			int j(6);
+			i %= j;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "Int &= Int",
+		[]()
+		{
+			// -------------------------
+			int expected = 0x1000;
+			Int i(0x1100);
+			Int j(0x1010);
+			i &= j;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "Int &= int",
+		[]()
+		{
+			// -------------------------
+			int expected = 0x1000;
+			Int i(0x1100);
+			int j(0x1010);
+			i &= j;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "Int |= Int",
+		[]()
+		{
+			// -------------------------
+			int expected = 0x1110;
+			Int i(0x1100);
+			Int j(0x1010);
+			i |= j;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "Int |= int",
+		[]()
+		{
+			// -------------------------
+			int expected = 0x1110;
+			Int i(0x1100);
+			int j(0x1010);
+			i |= j;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "Int ^= Int",
+		[]()
+		{
+			// -------------------------
+			int expected = 0x0110;
+			Int i(0x1100);
+			Int j(0x1010);
+			i ^= j;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "Int ^= int",
+		[]()
+		{
+			// -------------------------
+			int expected = 0x0110;
+			Int i(0x1100);
+			int j(0x1010);
+			i ^= j;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "Int <<= Int",
+		[]()
+		{
+			// -------------------------
+			int expected = 0x0078;
+			Int i(0x000F);
+			Int j(3);
+			i <<= j;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "Int <<= int",
+		[]()
+		{
+			// -------------------------
+			int expected = 0x0078;
+			Int i(0x000F);
+			int j(3);
+			i <<= j;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "Int >>= Int",
+		[]()
+		{
+			// -------------------------
+			int expected = 0x000F;
+			Int i(0x00F0);
+			Int j(4);
+			i >>= j;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "Int >>= int",
+		[]()
+		{
+			// -------------------------
+			int expected = 0x000F;
+			Int i(0x00F0);
+			int j(4);
+			i >>= j;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "int += Int",
+		[]()
+		{
+			// -------------------------
+			int expected = 9;
+			Int i(5);
+			int j(4);
+			j += i;
+
+			// -------------------------
+			EQUAL_CHECK(expected, j);
+			return 0;
+		}
+	));
+
 	// END Unit Test Definitions
 	//////////////////////////////
 }

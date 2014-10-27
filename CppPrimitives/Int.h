@@ -15,10 +15,43 @@ namespace PrimitivesAsObjects
 
 		operator int() const;				// Cast to int
 
-		int get();							// Get value
+		int get() const;					// Get value
+
+		Int& operator+=(const Int& rhs);	// Int += Int
+		Int& operator+=(const int rhs);		// Int += int
+		Int& operator-=(const Int& rhs);	// Int -= Int
+		Int& operator-=(const int rhs);		// Int -= int
+		Int& operator*=(const Int& rhs);	// Int *= Int
+		Int& operator*=(const int rhs);		// Int *= int
+		Int& operator/=(const Int& rhs);	// Int /= Int
+		Int& operator/=(const int rhs);		// Int /= int
+		Int& operator%=(const Int& rhs);	// Int %= Int
+		Int& operator%=(const int rhs);		// Int %= int
+		Int& operator&=(const Int& rhs);	// Int &= Int
+		Int& operator&=(const int rhs);		// Int &= int
+		Int& operator|=(const Int& rhs);	// Int |= Int
+		Int& operator|=(const int rhs);		// Int |= int
+		Int& operator^=(const Int& rhs);	// Int ^= Int
+		Int& operator^=(const int rhs);		// Int ^= int
+		Int& operator<<=(const Int& rhs);	// Int <<= Int
+		Int& operator<<=(const int rhs);	// Int <<= int
+		Int& operator>>=(const Int& rhs);	// Int >>= Int
+		Int& operator>>=(const int rhs);	// Int >>= int
+
+		friend int& operator+=(int& lhs, const Int& rhs);	// int += Int
+		friend int& operator-=(int& lhs, const Int& rhs);	// int -= Int
+		friend int& operator*=(int& lhs, const Int& rhs);	// int *= Int
+		friend int& operator/=(int& lhs, const Int& rhs);	// int /= Int
+		friend int& operator%=(int& lhs, const Int& rhs);	// int %= Int
+		friend int& operator&=(int& lhs, const Int& rhs);	// int &= Int
+		friend int& operator|=(int& lhs, const Int& rhs);	// int |= Int
+		friend int& operator^=(int& lhs, const Int& rhs);	// int ^= Int
+		friend int& operator<<=(int& lhs, const Int& rhs);	// int <<= Int
+		friend int& operator>>=(int& lhs, const Int& rhs);	// int >>= Int
 
 	private:
 
+		// Data
 		int value;
 	};
 }
