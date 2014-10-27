@@ -2,6 +2,11 @@
 #include "UnitTest.h"
 #endif
 
+#include <iostream>
+
+using namespace SimpleUnitTestBed;
+
+// Specialized Ctor
 UnitTest::UnitTest(std::string className,
 				   std::string testName,
 				   TestProcedure unitTest) :
@@ -12,18 +17,18 @@ UnitTest::UnitTest(std::string className,
 // Functor to perform unit test
 int UnitTest::operator()()
 {
-	return this->_test();
+	const int failures = this->_test();
+
+	if(failures != 0)
+	{
+		std::cout << "FAILURE: For object \"" << _className << "\" in test \""
+			<< _testName << "\"\n\n";
+	}
+
+	return failures;
 }
 
-// Disable Default Ctor
-UnitTest::UnitTest()
-{
-}
-
-UnitTest::~UnitTest()
-{
-}
-
+// Copy Ctor (needed to put into List<>)
 UnitTest::UnitTest(const UnitTest& rhs): 
 	_className(rhs._className),
 	_testName(rhs._testName),

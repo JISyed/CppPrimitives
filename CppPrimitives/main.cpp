@@ -2,14 +2,27 @@
 #include <iostream>
 
 #include "SimpleUnitTester\SimpleUnitTester.h"
+using namespace SimpleUnitTestBed;
 
 #include "Int.h"
 using namespace PrimitivesAsObjects;
 
+
 int main()
 {
 	SimpleUnitTester unitTesting;
-	/*
+
+	const int failures = unitTesting.PerformAllTests();
+	std::cout << "Number of Tests: " << unitTesting.GetNumberOfTests() << "\n";
+	std::cout << "Number or Failures: " << failures << "\n\n";
+
+	// Wait for user input
+	std::cout << "Press Enter...\n";
+	_getch();
+	return 0;
+}
+
+/*
 	int i = 1;
 	unsigned int ui = 100;
 	char c = 32;
@@ -25,22 +38,4 @@ int main()
 	double d = 9.0;
 
 	bool b = true;
-
-	Int intObj = 64;
-	intObj = 9000;
-	Int intObj2 = intObj;
-	intObj2 = 64;
-	Int intObj3;
-	intObj3 = intObj2;
-
-	int iConvert = intObj2;
-	//*/
-
-	const int failures = unitTesting.PerformAllTests();
-	std::cout << "Number or Failures: " << failures << std::endl;
-
-	// Wait for user input
-	std::cout << "Press Enter...\n";
-	_getch();
-	return 0;
-}
+//*/

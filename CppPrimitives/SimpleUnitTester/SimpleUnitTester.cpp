@@ -2,6 +2,8 @@
 #include "SimpleUnitTester.h"
 #endif
 
+using namespace SimpleUnitTestBed;
+
 // Constructor
 SimpleUnitTester::SimpleUnitTester()
 	: numOfTests(0), numOfFailures(0)
@@ -18,14 +20,14 @@ int SimpleUnitTester::PerformAllTests()
 {
 	// Create list of all tests
 	UnitTestList allUnitTests;
-
-	// Get number of tests
-	this->numOfTests = allUnitTests.size();
-
+	
 	////////////////////////
 	// See PrivUnitTests.cpp
 	this->createAllTests(allUnitTests);
 	////////////////////////
+
+	// Get number of tests
+	this->numOfTests = allUnitTests.size();
 
 	// Perform all the tests
 	for(auto itr = allUnitTests.begin(); itr != allUnitTests.end(); ++itr)

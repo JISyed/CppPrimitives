@@ -15,6 +15,8 @@ namespace PrimitivesAsObjects
 
 		operator int() const;				// Cast to int
 
+		int get();							// Get value
+
 	private:
 
 		int value;

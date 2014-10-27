@@ -46,4 +46,9 @@ namespace PrimitivesAsObjects
 	{
 		return this->value;
 	}
+
+	int Int::get()
+	{
+		return this->value;
+	}
 }

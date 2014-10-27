@@ -4,35 +4,41 @@
 #include <string>
 #include <functional>
 
-typedef std::function<int()> TestProcedure;
-
-class UnitTest
+namespace SimpleUnitTestBed
 {
-public:
-	UnitTest(std::string className,
-			 std::string testName,
-			 TestProcedure unitTest);
-	~UnitTest();
-	UnitTest(const UnitTest& rhs);
+	typedef std::function<int()> TestProcedure;
 
-	// Functor to perform unit test
-	int operator()();
-
-private:
-
-	// Disable Default Ctor
-	UnitTest();
+	class UnitTest
+	{
+	public:
 	
-	// Disable object-to-object assignment
-	UnitTest& operator=(const UnitTest& rhs) {rhs; return *this;}
+		// Specialized Ctor
+		UnitTest(std::string className,
+				 std::string testName,
+				 TestProcedure unitTest);
 
-	// Data
-	//TestProcedure test;
-	std::string _className;
-	std::string _testName;
-	TestProcedure _test;
-};
+		// Dtor
+		~UnitTest() {}
 
+		// Copy Ctor (needed to put into List<>)
+		UnitTest(const UnitTest& rhs);
 
+		// Functor to perform unit test
+		int operator()();
 
+	private:
+
+		// Disable Default Ctor
+		UnitTest() {}
+	
+		// Disable object-to-object assignment
+		UnitTest& operator=(const UnitTest& rhs) {rhs; return *this;}
+
+		// Data
+		std::string _className;
+		std::string _testName;
+		TestProcedure _test;
+	};
+
+} // end namespace
 #endif

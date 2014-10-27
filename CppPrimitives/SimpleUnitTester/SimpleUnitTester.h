@@ -4,33 +4,36 @@
 #include <list>
 #include "UnitTest.h"
 
-typedef std::list<UnitTest> UnitTestList;
-
-// NOTE: All unit tests return 0 on success, 1 on failure
-class SimpleUnitTester
+namespace SimpleUnitTestBed
 {
-public:
+	typedef std::list<UnitTest> UnitTestList;
 
-	// Constructor
-	SimpleUnitTester();
-	// Desructor
-	~SimpleUnitTester();
+	// NOTE: All unit tests return 0 on success, 1 on failure
+	class SimpleUnitTester
+	{
+	public:
 
-	// Does all the unit tests. Returns number of failed tests.
-	int PerformAllTests();
+		// Constructor
+		SimpleUnitTester();
+		// Desructor
+		~SimpleUnitTester();
 
-	// Get the number of unit tests
-	int GetNumberOfTests();
+		// Does all the unit tests. Returns number of failed tests.
+		int PerformAllTests();
 
-	// Get the number failures for all unit tests
-	int GetNumberOfFailures();
+		// Get the number of unit tests
+		int GetNumberOfTests();
+		// Get the number failures for all unit tests
+		int GetNumberOfFailures();
 
-private:
+	private:
 
-	void createAllTests(UnitTestList& allUnitTests);
+		// Defines all the Unit Tests (See PrivUnitTests.cpp)
+		void createAllTests(UnitTestList& allUnitTests);
 
-	int numOfTests;
-	int numOfFailures;
-};
+		int numOfTests;
+		int numOfFailures;
+	};
 
+}	// end namespace
 #endif
