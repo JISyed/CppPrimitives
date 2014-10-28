@@ -124,7 +124,13 @@ namespace PrimitivesAsObjects
 	private:
 
 		// Data
+
 		int value;
+
+		// Prohibited functionality
+		
+		// Casting to anything other than what is public
+		template<typename T> operator T() const;
 	};
 }
 
