@@ -426,6 +426,113 @@ void SimpleUnitTester::createAllTests(UnitTestList& allUnitTests)
 		}
 	));
 
+	allUnitTests.push_back(UnitTest(
+		"Int", "++Int",
+		[]()
+		{
+			// -------------------------
+			int expected = 9;
+			Int i = 8;
+			++i;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "--Int",
+		[]()
+		{
+			// -------------------------
+			int expected = 7;
+			Int i = 8;
+			--i;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "Int++",
+		[]()
+		{
+			// -------------------------
+			int expected = 9;
+			Int i = 8;
+			Int j = i++;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			EQUAL_CHECK(8, j.get());
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "Int--",
+		[]()
+		{
+			// -------------------------
+			int expected = 7;
+			Int i = 8;
+			Int j = i--;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			EQUAL_CHECK(8, j.get());
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "+Int",
+		[]()
+		{
+			// -------------------------
+			int expected = -8;
+			Int i = -8;
+			i = +i;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "-Int",
+		[]()
+		{
+			// -------------------------
+			int expected = -8;
+			Int i = 8;
+			i = -i;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "~Int",
+		[]()
+		{
+			// -------------------------
+			int expected = 0x00008000;
+			Int i = 0xFFFF7FFF;
+			i = ~i;
+
+			// -------------------------
+			EQUAL_CHECK(expected, i.get());
+			return 0;
+		}
+	));
+
 	// END Unit Test Definitions
 	//////////////////////////////
 }

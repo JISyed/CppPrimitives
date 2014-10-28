@@ -49,6 +49,16 @@ namespace PrimitivesAsObjects
 		friend int& operator<<=(int& lhs, const Int& rhs);	// int <<= Int
 		friend int& operator>>=(int& lhs, const Int& rhs);	// int >>= Int
 
+		Int& operator++();			// ++Int
+		Int& operator--();			// --Int
+		Int operator++(int dummy);	// Int++
+		Int operator--(int dummy);	// Int--
+
+		Int operator+() const;		// +Int
+		Int operator-() const;		// -Int
+		Int operator~() const;		// ~Int
+
+
 	private:
 
 		// Data

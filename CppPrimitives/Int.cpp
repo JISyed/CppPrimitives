@@ -228,5 +228,53 @@ namespace PrimitivesAsObjects
 		return lhs;
 	}
 
+	Int& Int::operator++()
+	{
+		++(this->value);
+		return *this;
+	}
+
+	Int& Int::operator--()
+	{
+		--(this->value);
+		return *this;
+	}
+
+	Int Int::operator++(int dummy)
+	{
+		dummy;
+		Int clone(*this);
+		this->value++;
+		return clone;
+	}
+
+	Int Int::operator--(int dummy)
+	{
+		dummy;
+		Int clone(*this);
+		this->value--;
+		return clone;
+	}
+
+	Int Int::operator+() const
+	{
+		Int clone(*this);
+		clone.value = +(clone.value);
+		return clone;
+	}
+
+	Int Int::operator-() const
+	{
+		Int clone(*this);
+		clone.value = -(clone.value);
+		return clone;
+	}
+
+	Int Int::operator~() const
+	{
+		Int clone(*this);
+		clone.value = ~(clone.value);
+		return clone;
+	}
 
 }
