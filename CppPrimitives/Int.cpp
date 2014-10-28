@@ -277,4 +277,39 @@ namespace PrimitivesAsObjects
 		return clone;
 	}
 
+	bool Int::operator!() const
+	{
+		return !(this->value);
+	}
+
+	bool Int::operator&&(const Int& rhs) const
+	{
+		return this->value && rhs.value;
+	}
+
+	bool Int::operator||(const Int& rhs) const
+	{
+		return this->value || rhs.value;
+	}
+
+	bool Int::operator&&(const int rhs) const
+	{
+		return this->value && rhs;
+	}
+
+	bool Int::operator||(const int rhs) const
+	{
+		return this->value || rhs;
+	}
+
+	bool operator&&(int& lhs, const Int& rhs) 
+	{
+		return lhs && rhs.value;
+	}
+
+	bool operator||(int& lhs, const Int& rhs)
+	{
+		return lhs || rhs.value;
+	}
+
 }

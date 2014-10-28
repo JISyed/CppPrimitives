@@ -58,6 +58,14 @@ namespace PrimitivesAsObjects
 		Int operator-() const;		// -Int
 		Int operator~() const;		// ~Int
 
+		bool operator!() const;					// !Int
+		bool operator&&(const Int& rhs) const;	// Int && Int
+		bool operator||(const Int& rhs) const;	// Int || Int
+		bool operator&&(const int rhs) const;	// Int && int
+		bool operator||(const int rhs) const;	// Int || int
+
+		friend bool operator&&(int& lhs, const Int& rhs);	// int && Int
+		friend bool operator||(int& lhs, const Int& rhs);	// int || Int
 
 	private:
 

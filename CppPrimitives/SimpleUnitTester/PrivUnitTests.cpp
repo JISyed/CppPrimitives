@@ -533,6 +533,53 @@ void SimpleUnitTester::createAllTests(UnitTestList& allUnitTests)
 		}
 	));
 
+	allUnitTests.push_back(UnitTest(
+		"Int", "!Int",
+		[]()
+		{
+			// -------------------------
+			bool expected = false;
+			Int i = 23;
+			bool actual = !i;
+
+			// -------------------------
+			EQUAL_CHECK(expected, actual);
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "Int && Int",
+		[]()
+		{
+			// -------------------------
+			bool expected = true;
+			Int i = 23;
+			Int j = 1;
+			bool actual = i && j;
+
+			// -------------------------
+			EQUAL_CHECK(expected, actual);
+			return 0;
+		}
+	));
+
+	allUnitTests.push_back(UnitTest(
+		"Int", "Int || Int",
+		[]()
+		{
+			// -------------------------
+			bool expected = false;
+			Int i = 0;
+			Int j = 0;
+			bool actual = i || j;
+
+			// -------------------------
+			EQUAL_CHECK(expected, actual);
+			return 0;
+		}
+	));
+
 	// END Unit Test Definitions
 	//////////////////////////////
 }
