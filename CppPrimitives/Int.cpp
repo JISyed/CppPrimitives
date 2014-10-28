@@ -302,14 +302,109 @@ namespace PrimitivesAsObjects
 		return this->value || rhs;
 	}
 
-	bool operator&&(int& lhs, const Int& rhs) 
+	bool operator&&(const int& lhs, const Int& rhs) 
 	{
 		return lhs && rhs.value;
 	}
 
-	bool operator||(int& lhs, const Int& rhs)
+	bool operator||(const int& lhs, const Int& rhs)
 	{
 		return lhs || rhs.value;
 	}
 
+	// Comparison
+	bool Int::operator==(const Int& rhs) const
+	{
+		return this->value == rhs.value;
+	}
+
+	bool Int::operator==(const int rhs) const
+	{
+		return this->value == rhs;
+	}
+
+	bool Int::operator!=(const Int& rhs) const
+	{
+		return this->value != rhs.value;
+	}
+
+	bool Int::operator!=(const int rhs) const
+	{
+		return this->value != rhs;
+	}
+
+	bool Int::operator<(const Int& rhs) const
+	{
+		return this->value < rhs.value;
+	}
+
+	bool Int::operator<(const int rhs) const
+	{
+		return this->value < rhs;
+	}
+
+	bool Int::operator>(const Int& rhs) const
+	{
+		return this->value > rhs.value;
+	}
+
+	bool Int::operator>(const int rhs) const
+	{
+		return this->value > rhs;
+	}
+
+	bool Int::operator<=(const Int& rhs) const
+	{
+		return this->value <= rhs.value;
+	}
+
+	bool Int::operator<=(const int rhs) const
+	{
+		return this->value <= rhs;
+	}
+
+	bool Int::operator>=(const Int& rhs) const
+	{
+		return this->value >= rhs.value;
+	}
+
+	bool Int::operator>=(const int rhs) const
+	{
+		return this->value >= rhs;
+	}
+
+	bool operator==(const int& lhs, const Int& rhs)
+	{
+		return lhs == rhs.value;
+	}
+
+	bool operator!=(const int& lhs, const Int& rhs)
+	{
+		return lhs != rhs.value;
+	}
+
+	bool operator<(const int& lhs, const Int& rhs)
+	{
+		return lhs < rhs.value;
+	}
+
+	bool operator>(const int& lhs, const Int& rhs)
+	{
+		return lhs > rhs.value;
+	}
+
+	bool operator<=(const int& lhs, const Int& rhs)
+	{
+		return lhs <= rhs.value;
+	}
+
+	bool operator>=(const int& lhs, const Int& rhs)
+	{
+		return lhs >= rhs.value;
+	}
+
+	Int* Int::operator&()
+	{
+		return this;
+	}
 }

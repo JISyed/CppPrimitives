@@ -64,8 +64,30 @@ namespace PrimitivesAsObjects
 		bool operator&&(const int rhs) const;	// Int && int
 		bool operator||(const int rhs) const;	// Int || int
 
-		friend bool operator&&(int& lhs, const Int& rhs);	// int && Int
-		friend bool operator||(int& lhs, const Int& rhs);	// int || Int
+		friend bool operator&&(const int& lhs, const Int& rhs);	// int && Int
+		friend bool operator||(const int& lhs, const Int& rhs);	// int || Int
+
+		bool operator==(const Int& rhs) const;	// Int == Int
+		bool operator==(const int rhs) const;	// Int == int
+		bool operator!=(const Int& rhs) const;	// Int != Int
+		bool operator!=(const int rhs) const;	// Int != int
+		bool operator<(const Int& rhs) const;	// Int < Int
+		bool operator<(const int rhs) const;	// Int < int
+		bool operator>(const Int& rhs) const;	// Int > Int
+		bool operator>(const int rhs) const;	// Int > int
+		bool operator<=(const Int& rhs) const;	// Int <= Int
+		bool operator<=(const int rhs) const;	// Int <= int
+		bool operator>=(const Int& rhs) const;	// Int >= Int
+		bool operator>=(const int rhs) const;	// Int >= int
+
+		friend bool operator==(const int& lhs, const Int& rhs);	// int == Int
+		friend bool operator!=(const int& lhs, const Int& rhs);	// int != Int
+		friend bool operator<(const int& lhs, const Int& rhs);	// int < Int
+		friend bool operator>(const int& lhs, const Int& rhs);	// int > Int
+		friend bool operator<=(const int& lhs, const Int& rhs);	// int <= Int
+		friend bool operator>=(const int& lhs, const Int& rhs);	// int >= Int
+
+		Int* operator&();	// &Int
 
 	private:
 
