@@ -580,7 +580,21 @@ void SimpleUnitTester::createAllTests(UnitTestList& allUnitTests)
 		}
 	));
 
-	
+	allUnitTests.push_back(UnitTest(
+		"Int", "Int + Int",
+		[]()
+		{
+			// -------------------------
+			int expected = 18;
+			Int i = 6;
+			Int j = 12;
+			Int result = i + j;
+
+			// -------------------------
+			EQUAL_CHECK(expected, result.get());
+			return 0;
+		}
+	));
 
 	// END Unit Test Definitions
 	//////////////////////////////

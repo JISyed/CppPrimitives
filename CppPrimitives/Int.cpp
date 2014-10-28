@@ -2,6 +2,8 @@
 
 namespace PrimitivesAsObjects
 {
+	// Fundamentals
+
 	Int::Int() : value(0)
 	{
 	}
@@ -38,15 +40,21 @@ namespace PrimitivesAsObjects
 		return *this;
 	}
 
+	// Cast to native
+
 	Int::operator int() const
 	{
 		return this->value;
 	}
 
+	// Getter
+
 	int Int::get() const
 	{
 		return this->value;
 	}
+
+	// Arithmetic Assignment
 
 	Int& Int::operator+=(const Int& rhs)
 	{
@@ -228,6 +236,8 @@ namespace PrimitivesAsObjects
 		return lhs;
 	}
 
+	// Incremental
+
 	Int& Int::operator++()
 	{
 		++(this->value);
@@ -256,6 +266,8 @@ namespace PrimitivesAsObjects
 		return clone;
 	}
 
+	// Unary
+
 	Int Int::operator+() const
 	{
 		Int clone(*this);
@@ -276,6 +288,8 @@ namespace PrimitivesAsObjects
 		clone.value = ~(clone.value);
 		return clone;
 	}
+
+	// Logical
 
 	bool Int::operator!() const
 	{
@@ -313,6 +327,7 @@ namespace PrimitivesAsObjects
 	}
 
 	// Comparison
+
 	bool Int::operator==(const Int& rhs) const
 	{
 		return this->value == rhs.value;
@@ -403,8 +418,224 @@ namespace PrimitivesAsObjects
 		return lhs >= rhs.value;
 	}
 
+	// Address
+
 	Int* Int::operator&()
 	{
 		return this;
 	}
+
+	// Arithmetic
+
+	Int Int::operator+(const Int& rhs) const
+	{
+		Int result(*this);
+		result.value += rhs.value;
+		return result;
+	}
+
+	Int Int::operator+(const int rhs) const
+	{
+		Int result(*this);
+		result.value += rhs;
+		return result;
+	}
+
+	Int Int::operator-(const Int& rhs) const
+	{
+		Int result(*this);
+		result.value -= rhs.value;
+		return result;
+	}
+
+	Int Int::operator-(const int rhs) const
+	{
+		Int result(*this);
+		result.value -= rhs;
+		return result;
+	}
+
+	Int Int::operator*(const Int& rhs) const
+	{
+		Int result(*this);
+		result.value *= rhs.value;
+		return result;
+	}
+
+	Int Int::operator*(const int rhs) const
+	{
+		Int result(*this);
+		result.value *= rhs;
+		return result;
+	}
+
+	Int Int::operator/(const Int& rhs) const
+	{
+		Int result(*this);
+		result.value /= rhs.value;
+		return result;
+	}
+
+	Int Int::operator/(const int rhs) const
+	{
+		Int result(*this);
+		result.value /= rhs;
+		return result;
+	}
+
+	Int Int::operator%(const Int& rhs) const
+	{
+		Int result(*this);
+		result.value %= rhs.value;
+		return result;
+	}
+
+	Int Int::operator%(const int rhs) const
+	{
+		Int result(*this);
+		result.value %= rhs;
+		return result;
+	}
+
+	Int Int::operator&(const Int& rhs) const
+	{
+		Int result(*this);
+		result.value &= rhs.value;
+		return result;
+	}
+
+	Int Int::operator&(const int rhs) const
+	{
+		Int result(*this);
+		result.value &= rhs;
+		return result;
+	}
+
+	Int Int::operator|(const Int& rhs) const
+	{
+		Int result(*this);
+		result.value |= rhs.value;
+		return result;
+	}
+
+	Int Int::operator|(const int rhs) const
+	{
+		Int result(*this);
+		result.value |= rhs;
+		return result;
+	}
+
+	Int Int::operator^(const Int& rhs) const
+	{
+		Int result(*this);
+		result.value ^= rhs.value;
+		return result;
+	}
+
+	Int Int::operator^(const int rhs) const
+	{
+		Int result(*this);
+		result.value ^= rhs;
+		return result;
+	}
+
+	Int Int::operator<<(const Int& rhs) const
+	{
+		Int result(*this);
+		result.value <<= rhs.value;
+		return result;
+	}
+
+	Int Int::operator<<(const int rhs) const
+	{
+		Int result(*this);
+		result.value <<= rhs;
+		return result;
+	}
+
+	Int Int::operator>>(const Int& rhs) const
+	{
+		Int result(*this);
+		result.value >>= rhs.value;
+		return result;
+	}
+
+	Int Int::operator>>(const int rhs) const
+	{
+		Int result(*this);
+		result.value >>= rhs;
+		return result;
+	}
+
+
+	Int operator+(const int& lhs, const Int& rhs)
+	{
+		Int result = lhs;
+		result.value += rhs.value;
+		return result;
+	}
+
+	Int operator-(const int& lhs, const Int& rhs)
+	{
+		Int result = lhs;
+		result.value -= rhs.value;
+		return result;
+	}
+
+	Int operator*(const int& lhs, const Int& rhs)
+	{
+		Int result = lhs;
+		result.value *= rhs.value;
+		return result;
+	}
+
+	Int operator/(const int& lhs, const Int& rhs)
+	{
+		Int result = lhs;
+		result.value /= rhs.value;
+		return result;
+	}
+
+	Int operator%(const int& lhs, const Int& rhs)
+	{
+		Int result = lhs;
+		result.value %= rhs.value;
+		return result;
+	}
+
+	Int operator&(const int& lhs, const Int& rhs)
+	{
+		Int result = lhs;
+		result.value &= rhs.value;
+		return result;
+	}
+
+	Int operator|(const int& lhs, const Int& rhs)
+	{
+		Int result = lhs;
+		result.value |= rhs.value;
+		return result;
+	}
+
+	Int operator^(const int& lhs, const Int& rhs)
+	{
+		Int result = lhs;
+		result.value ^= rhs.value;
+		return result;
+	}
+
+	Int operator<<(const int& lhs, const Int& rhs)
+	{
+		Int result = lhs;
+		result.value <<= rhs.value;
+		return result;
+	}
+
+	Int operator>>(const int& lhs, const Int& rhs)
+	{
+		Int result = lhs;
+		result.value >>= rhs.value;
+		return result;
+	}
+
 }

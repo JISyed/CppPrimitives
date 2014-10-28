@@ -89,6 +89,38 @@ namespace PrimitivesAsObjects
 
 		Int* operator&();	// &Int
 
+		Int operator+(const Int& rhs) const;	// Int + Int
+		Int operator+(const int rhs) const;		// Int + int
+		Int operator-(const Int& rhs) const;	// Int - Int
+		Int operator-(const int rhs) const;		// Int - int
+		Int operator*(const Int& rhs) const;	// Int * Int
+		Int operator*(const int rhs) const;		// Int * int
+		Int operator/(const Int& rhs) const;	// Int / Int
+		Int operator/(const int rhs) const;		// Int / int
+		Int operator%(const Int& rhs) const;	// Int % Int
+		Int operator%(const int rhs) const;		// Int % int
+		Int operator&(const Int& rhs) const;	// Int & Int
+		Int operator&(const int rhs) const;		// Int & int
+		Int operator|(const Int& rhs) const;	// Int | Int
+		Int operator|(const int rhs) const;		// Int | int
+		Int operator^(const Int& rhs) const;	// Int ^ Int
+		Int operator^(const int rhs) const;		// Int ^ int
+		Int operator<<(const Int& rhs) const;	// Int << Int
+		Int operator<<(const int rhs) const;	// Int << int
+		Int operator>>(const Int& rhs) const;	// Int >> Int
+		Int operator>>(const int rhs) const;	// Int >> int
+
+		friend Int operator+(const int& lhs, const Int& rhs);	// int + Int
+		friend Int operator-(const int& lhs, const Int& rhs);	// int - Int
+		friend Int operator*(const int& lhs, const Int& rhs);	// int * Int
+		friend Int operator/(const int& lhs, const Int& rhs);	// int / Int
+		friend Int operator%(const int& lhs, const Int& rhs);	// int % Int
+		friend Int operator&(const int& lhs, const Int& rhs);	// int & Int
+		friend Int operator|(const int& lhs, const Int& rhs);	// int | Int
+		friend Int operator^(const int& lhs, const Int& rhs);	// int ^ Int
+		friend Int operator<<(const int& lhs, const Int& rhs);	// int << Int
+		friend Int operator>>(const int& lhs, const Int& rhs);	// int >> Int
+
 	private:
 
 		// Data
